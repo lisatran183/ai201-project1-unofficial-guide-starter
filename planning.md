@@ -9,7 +9,7 @@
 
 ## Domain
 
-<!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+Northeastern University co-op experiences shared by students across Reddit, Medium, and other platforms. This knowledge is hard to find otherwise because it's scattered across dozens of sources and not aggregated anywhere officially.
 
 ---
 
@@ -20,16 +20,16 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | r/NEU Reddit | Student co-op search and experience threads | https://www.reddit.com/r/NEU/search/?q=co-op |
+| 2 | r/NEU Reddit | More specific co-op experience threads | https://www.reddit.com/r/NEU/search/?q=coop+experience |
+| 3 | Northeastern Experience Magazine | Students sharing co-op experiences | https://experiencepoweredby.northeastern.edu/cooperative-education/page/2/ |
+| 4 | Northeastern News | What is the co-op experience article | https://news.northeastern.edu/2024/03/25/co-op-experience/ |
+| 5 | COE Graduate Ambassadors Blog | Student co-op reflections and stories | https://coegraduatestudentambassadors.sites.northeastern.edu/the-blog/page/4 |
+| 6 | Medium - Mingle Li | Top 10 tips from first co-op search, mistakes and advice | https://medium.com/@minglethepringle/top-ten-tips-for-northeastern-university-co-op-b6fb7dfd0eee |
+| 7 | Medium - Serena Wang | International student perspective on co-op | https://medium.com/@serenawang0210/behind-northeasterns-co-op-program-f4265614127a |
+| 8 | Medium - Tiffany Nguyen | Honest review from Class of 2025 business graduate | https://medium.com/@tiffanyn.3544/my-honest-northeastern-experience-personal-perspective-22f66e918ce7 |
+| 9 | Medium - Grace Yeung | NEU senior guide to co-op, PM and BA experience | https://graceyg.medium.com/demystifying-college-co-ops-what-is-it-how-do-i-get-one-421544a637b2 |
+| 10 | Huntington News | Student newspaper article with candid co-op experiences | https://huntnewsnu.com/82523/campus/115-years-later-how-northeasterns-co-op-program-grew-with-the-university/ |
 
 ---
 
@@ -70,6 +70,12 @@
      Questions should be specific enough that you can judge whether the system's response
      is right or wrong. "What are good dining halls?" is too vague.
      "What do students say about wait times at [dining hall name] during lunch?" is testable. -->
+
+What's it like to co-op at [company]?
+Which companies do NU students recommend for co-ops?
+What's the pay like for co-ops in [industry]?
+How do students feel about their first co-op vs second?
+What are common challenges NU students face on co-op?
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
