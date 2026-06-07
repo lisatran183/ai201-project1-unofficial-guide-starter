@@ -156,3 +156,61 @@ Northeastern University co-op experiences shared by students across Reddit, Medi
 - *What I gave the AI:* My completed ingest.py, the Retrieval Approach section from planning.md (all-MiniLM-L6-v2, top-k=5, ChromaDB), and the architecture diagram. I asked it to generate embedding and generation code plus a Gradio UI.
 - *What it produced:* embed.py with SentenceTransformer embedding, ChromaDB storage with source metadata, and a retrieve() function. Then app.py wiring retrieval to Groq llama-3.3-70b with a grounding prompt and a Gradio interface with answer and sources boxes.
 - *What I changed or overrode:*  The initial app.py failed because gradio wasn't installed. I also noticed the grounding prompt said "suggest" rather than enforce — I verified it actually refused to answer out-of-scope questions before accepting it.
+
+## Sample Chunks
+
+**Chunk 1** (01_reddit_neu_coop.txt):
+Source: r/NEU - "I hate my final co-op". I hate my final co-op. I've been feeling this way after one week of working. I'm about to graduate and people say stuff along the lines of "it's ok at least you're getting paid to do nothing", but it's not worth it when you have nothing to do.
+
+**Chunk 2** (02_reddit_neu_coop2.txt):
+Source: r/NEU - "Co-op reassurance". I just wanted to come on here and say it's very possible to get a late co-op! I finally placed after having around 17-20 interviews. Don't give up if you haven't placed yet, it will happen!
+
+**Chunk 3** (06_medium_mingle_li.txt):
+The average is $26/hr, and I didn't want to settle for anything below $30/hr. The point of the first-time co-op is experience, not the money. The money will come with experience and time! Do not stress about getting the highest pay.
+
+**Chunk 4** (08_medium_tiffany_nguyen.txt):
+Northeastern University partners with various local hospitals, clinics, and labs for nursing students' co-op experiences. Companies like Google, Raytheon, IBM, Apple are mentioned for computer science and engineering students.
+
+**Chunk 5** (10_huntington_news.txt):
+Northeastern's co-op program has grown significantly over 115 years. Students cite the co-op program as the primary reason they chose to attend Northeastern. The program integrates classroom study with professional work experience.
+
+## Retrieval Test Results
+
+**Query 1:** "What is the average co-op pay at Northeastern?"
+Top returned chunks: 06_medium_mingle_li.txt, 10_huntington_news.txt, 03_neu_experience_mag.txt
+Why relevant: The top chunk from 06_medium_mingle_li.txt directly mentions "$26/hr" as the average co-op pay, which is exactly what the query asks for. The retrieval correctly prioritized the most specific source.
+
+**Query 2:** "What mistakes do students make during their first co-op search?"
+Top returned chunks: 02_reddit_neu_coop2.txt, 06_medium_mingle_li.txt, 09_medium_grace_yeung.txt
+Why relevant: 06_medium_mingle_li.txt is a blog post entirely about co-op search mistakes, making it the most relevant source. The retrieval correctly included it in the top results.
+
+**Query 3:** "How long is a co-op at Northeastern?"
+Top returned chunks: 05_coe_ambassadors.txt, 10_huntington_news.txt, 08_medium_tiffany_nguyen.txt, 06_medium_mingle_li.txt
+Why relevant: 05_coe_ambassadors.txt directly states co-op duration options (4, 6, or 8 months), making it the correct top result for this factual query.
+
+## Query Interface
+
+The system uses a Gradio web UI accessible at http://127.0.0.1:7860
+
+**Input fields:**
+- Your question: a free-text box where the user types any question about NU co-op experiences
+
+**Output fields:**
+- Answer: the LLM-generated response grounded in retrieved documents, with source citations
+- Retrieved from: the filenames of the top-5 chunks used to generate the answer
+
+**Sample interaction transcript:**
+- User: "What mistakes do students make during their first co-op search?"
+- Answer: "According to the document "06_medium_mingle_li.txt", some common mistakes students make during their first co-op search include:
+
+1. Establishing a pay expectation before knowing the employer's base compensation, which can lead to awkward negotiations.
+2. Prioritizing pay over experience, when in fact, the experience gained from the co-op is more valuable in the long run.
+3. Not truly understanding or valuing the experience that a co-op can bring, and instead focusing too much on the monetary aspect.
+4. Bringing self-worth into the co-op search, which can lead to unnecessary stress and pressure.
+
+These mistakes can hinder a student's co-op search and overall experience. By being aware of these common pitfalls, students can better navigate their co-op search and make the most of their experience. (Source: 06_medium_mingle_li.txt)"
+- Retrieved from: 06_medium_mingle_li.txt, 02_reddit_neu_coop2.txt, 09_medium_grace_yeung.txt, 10_huntington_news.txt
+
+**Out-of-scope query example:**
+- User: "What is the best pizza place in Boston?"
+- Answer: "I don't have enough information in my documents to answer that."
