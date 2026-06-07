@@ -40,11 +40,11 @@ Northeastern University co-op experiences shared by students across Reddit, Medi
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size:** 500 tokens
 
-**Overlap:**
+**Overlap:** 50 tokens
 
-**Reasoning:**
+**Reasoning:** Co-op reviews are short and conversational, so smaller chunks keep individual experiences intact without splitting mid-thought
 
 ---
 
@@ -56,11 +56,11 @@ Northeastern University co-op experiences shared by students across Reddit, Medi
      would you weigh in choosing a different embedding model — context length, multilingual
      support, accuracy on domain-specific text, latency? -->
 
-**Embedding model:**
+**Embedding model:** all-MiniLM-L6-v2 via sentence-transformers
 
-**Top-k:**
+**Top-k:** 5
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection:** If cost wasn't a constraint, I would consider OpenAI's text-embedding-3-large for better accuracy on domain-specific text like co-op reviews. The tradeoffs would be: higher accuracy and better semantic understanding vs. higher latency and API cost per query. For a multilingual use case (international NU students), a multilingual model like paraphrase-multilingual-MiniLM-L12-v2 would be worth exploring despite the added complexity
 
 ---
 
@@ -71,19 +71,13 @@ Northeastern University co-op experiences shared by students across Reddit, Medi
      is right or wrong. "What are good dining halls?" is too vague.
      "What do students say about wait times at [dining hall name] during lunch?" is testable. -->
 
-What's it like to co-op at [company]?
-Which companies do NU students recommend for co-ops?
-What's the pay like for co-ops in [industry]?
-How do students feel about their first co-op vs second?
-What are common challenges NU students face on co-op?
-
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | What is the average co-op pay at Northeastern? | Around $26/hr based on student reports |
+| 2 | Is co-op required at Northeastern? | No, but highly encouraged, almost all students do it |
+| 3 | What mistakes do students make during their first co-op search? | Focusing too much on pay rather than experience |
+| 4 | What companies have NU students co-oped at in healthcare? | Mass General, Brigham and Women's, Boston Children's Hospital |
+| 5 | How long is a co-op at Northeastern? | Six months full-time |
 
 ---
 
@@ -93,9 +87,9 @@ What are common challenges NU students face on co-op?
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. Noisy or inconsistent documents: Blog posts and Reddit threads vary widely in structure and length, making it hard to chunk them consistently. Some reviews are one sentence, others are full paragraphs -> this may cause uneven retrieval quality.
 
-2.
+2. Off-topic retrieval: Some sources discuss co-op generally (tips, process) rather than specific experiences, so the system may retrieve irrelevant chunks when asked about a specific company or role.
 
 ---
 
@@ -106,6 +100,15 @@ What are common challenges NU students face on co-op?
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
+
+```mermaid
+flowchart LR
+    A[Document Ingestion\nraw text files] --> B[Chunking\n500 tokens / 50 overlap]
+    B --> C[Embedding\nall-MiniLM-L6-v2]
+    C --> D[Vector Store\nChromaDB]
+    D --> E[Retrieval\ntop-k=5]
+    E --> F[Generation\nGroq llama-3.3-70b-versatile]
+```
 
 ---
 
@@ -121,8 +124,8 @@ What are common challenges NU students face on co-op?
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
 
-**Milestone 3 — Ingestion and chunking:**
+**Milestone 3 — Ingestion and chunking:** Use Claude. Input: this planning.md with chunking strategy section. Expect it to produce Python code that reads text files from the documents/ folder and splits them into 500-token chunks with 50-token overlap. Verify by printing chunk count and a sample chunk.
 
-**Milestone 4 — Embedding and retrieval:**
+**Milestone 4 — Embedding and retrieval:** Use Claude. Input: chunking code + retrieval approach section. Expect code that embeds chunks using all-MiniLM-L6-v2 and stores them in ChromaDB, then retrieves top-5 chunks for a query. Verify by running a test query and checking returned chunks are relevant.
 
-**Milestone 5 — Generation and interface:**
+**Milestone 5 — Generation and interface:** Use Claude. Input: retrieval code + architecture diagram. Expect code that passes retrieved chunks to Groq llama-3.3-70b and returns a final answer. Verify by running the 5 evaluation questions and checking answers match expected.
