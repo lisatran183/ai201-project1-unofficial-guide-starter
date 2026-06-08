@@ -201,15 +201,18 @@ The system uses a Gradio web UI accessible at http://127.0.0.1:7860
 
 **Sample interaction transcript:**
 - User: "What mistakes do students make during their first co-op search?"
-- Answer: "According to the document "06_medium_mingle_li.txt", some common mistakes students make during their first co-op search include:
+- Answer: "According to the document [Source: 06_medium_mingle_li.txt], students make several mistakes during their first co-op search, including:
 
-1. Establishing a pay expectation before knowing the employer's base compensation, which can lead to awkward negotiations.
-2. Prioritizing pay over experience, when in fact, the experience gained from the co-op is more valuable in the long run.
-3. Not truly understanding or valuing the experience that a co-op can bring, and instead focusing too much on the monetary aspect.
-4. Bringing self-worth into the co-op search, which can lead to unnecessary stress and pressure.
+1. Focusing too much on pay and establishing a pay rate before the employer does.
+2. Prioritizing money over experience.
+3. Bringing self-worth into the co-op search and expecting high pay due to past experience.
+4. Trying to "prove themselves" on NUWorks by going through a lengthy application process.
+5. Not using connections and contacts to get referrals, which can carry a lot of weight in the application process.
+6. Not having personal projects to talk about with employers, which can make it difficult to stand out.
 
-These mistakes can hinder a student's co-op search and overall experience. By being aware of these common pitfalls, students can better navigate their co-op search and make the most of their experience. (Source: 06_medium_mingle_li.txt)"
-- Retrieved from: 06_medium_mingle_li.txt, 02_reddit_neu_coop2.txt, 09_medium_grace_yeung.txt, 10_huntington_news.txt
+These mistakes can lead to a less successful co-op search, but by learning from them, students can improve their chances of finding a good co-op opportunity.
+
+- Retrieved from: 06_medium_mingle_li.txt, 02_reddit_neu_coop2.txt, 09_medium_grace_yeung.txt, 10_huntington_news.txt"
 
 **Out-of-scope query example:**
 - User: "What is the best pizza place in Boston?"
