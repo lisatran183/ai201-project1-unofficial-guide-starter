@@ -30,7 +30,7 @@ Northeastern University co-op experiences shared by students across Reddit, Medi
 | 2 | r/NEU Reddit | Forum | https://www.reddit.com/r/NEU/comments/1t3s51i/coop_reassurance/ |
 | 3 | NEU Experience Magazine | Article | https://experiencepoweredby.northeastern.edu/cooperative-education/page/2/ |
 | 4 | Northeastern News | Article | https://news.northeastern.edu/2024/03/25/co-op-experience/ |
-| 5 | COE Graduate Ambassadors | Blog | https://coegraduatestudentambassadors.sites.northeastern.edu/the-blog/page/4 |
+| 5 | COE Graduate Ambassadors | Blog | https://coegraduatestudentambassadors.sites.northeastern.edu/2018/04/16/jobs-co-ops-in-em/ |
 | 6 | Medium - Mingle Li | Blog | https://medium.com/@minglethepringle/top-ten-tips-for-northeastern-university-co-op-b6fb7dfd0eee |
 | 7 | Medium - Serena Wang | Blog | https://medium.com/@serenawang0210/behind-northeasterns-co-op-program-f4265614127a |
 | 8 | Medium - Tiffany Nguyen | Blog | https://medium.com/@tiffanyn.3544/my-honest-northeastern-experience-personal-perspective-22f66e918ce7 |
