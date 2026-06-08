@@ -95,7 +95,7 @@ Northeastern University co-op experiences shared by students across Reddit, Medi
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
 | 1 | What is the average co-op pay at Northeastern? | ~$26/hr | $26/hr (Source: 06_medium_mingle_li.txt) | Relevant | Accurate |
-| 2 | Is co-op required at Northeastern? | No, but highly encouraged | "Don't have enough info" but mentions 90% participate | Partially relevant | Partially accurate |
+| 2 | Is co-op required at Northeastern? | No, but highly encouraged | "Not strictly mandatory but highly encouraged, 90% of students participate" (Source: 09_medium_grace_yeung.txt, 10_huntington_news.txt) | Relevant | Accurate |
 | 3 | What mistakes do students make during their first co-op search? | Focusing on pay over experience | Listed 6 correct mistakes from source | Relevant | Accurate |
 | 4 | What companies have NU students co-oped at in healthcare? | Mass General, BWH, etc. | "Specific names not in documents" | Partially relevant | Partially accurate |
 | 5 | How long is a co-op at Northeastern? | 6 months | "4, 6, or 8 months" | Relevant | Accurate |
@@ -117,11 +117,11 @@ Northeastern University co-op experiences shared by students across Reddit, Medi
 
 **Question that failed:** "Is co-op required at Northeastern?"
 
-**What the system returned:** "I don't have enough information in my documents to answer that. The documents mention that 90% of students complete at least one co-op, but they do not explicitly state whether co-op is required or not."
+**What the system returned:** Results were inconsistent across runs. In the first run, the system said "I don't have enough information." In a second run, it correctly answered "not strictly mandatory but highly encouraged." 
 
-**Root cause (tied to a specific pipeline stage):** The chunking stage split the relevant information across multiple chunks. The sentence stating co-op is "not required but highly encouraged" appeared in a chunk that was not retrieved in the top-5 results because the distance scores were too high (weak semantic match).
+**Root cause (tied to a specific pipeline stage):** ChromaDB is rebuilt in memory each time app.py starts, which can cause slight variations in retrieval order. The relevant chunk was sometimes ranked outside the top-5, making retrieval inconsistent for this query.
 
-**What you would change to fix it:** Reduce chunk size to 200-300 tokens so individual facts are not buried in larger chunks, or increase top-k from 5 to 10 to retrieve more candidates.
+**What you would change to fix it:** Persist the ChromaDB vector store to disk so embeddings are stable across runs, and increase top-k from 5 to 10 to reduce the chance of missing relevant chunks.
 
 ---
 
