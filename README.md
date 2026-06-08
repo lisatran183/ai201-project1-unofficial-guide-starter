@@ -27,7 +27,7 @@ Northeastern University co-op experiences shared by students across Reddit, Medi
 | # | Source | Type | URL or file path |
 |---|--------|------|-----------------|
 | 1 | r/NEU Reddit | Forum | https://www.reddit.com/r/NEU/comments/1ss0gjl/i_hate_my_final_coop/ |
-| 2 | r/NEU Reddit | Forum | https://www.reddit.com/r/NEU/search/?q=coop+experience |
+| 2 | r/NEU Reddit | Forum | https://www.reddit.com/r/NEU/comments/1t3s51i/coop_reassurance/ |
 | 3 | NEU Experience Magazine | Article | https://experiencepoweredby.northeastern.edu/cooperative-education/page/2/ |
 | 4 | Northeastern News | Article | https://news.northeastern.edu/2024/03/25/co-op-experience/ |
 | 5 | COE Graduate Ambassadors | Blog | https://coegraduatestudentambassadors.sites.northeastern.edu/the-blog/page/4 |
