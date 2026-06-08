@@ -96,7 +96,7 @@ Northeastern University co-op experiences shared by students across Reddit, Medi
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
 | 1 | What is the average co-op pay at Northeastern? | ~$26/hr | $26/hr (Source: 06_medium_mingle_li.txt) | Relevant | Accurate |
 | 2 | Is co-op required at Northeastern? | No, but highly encouraged | "Don't have enough info" but mentions 90% participate | Partially relevant | Partially accurate |
-| 3 | What mistakes do students make during their first co-op search? | Focusing on pay over experience | Listed 4 correct mistakes from source | Relevant | Accurate |
+| 3 | What mistakes do students make during their first co-op search? | Focusing on pay over experience | Listed 6 correct mistakes from source | Relevant | Accurate |
 | 4 | What companies have NU students co-oped at in healthcare? | Mass General, BWH, etc. | "Specific names not in documents" | Partially relevant | Partially accurate |
 | 5 | How long is a co-op at Northeastern? | 6 months | "4, 6, or 8 months" | Relevant | Accurate |
 
